@@ -1,0 +1,892 @@
+html {
+    /* 영문이면 roboto가 적용되고, 한글이면 Noto Sans KR가 적용되도록 아래와 같은 순서로 배치 */
+    font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+
+body {
+      font-family: "Noto Sans", "Noto Sans KR", sans-serif;
+      box-sizing: border-box;
+      position: relative;
+      line-height: 1.5;
+      margin: 0px;
+      padding: 0px;
+      vertical-align: baseline;
+      min-height: 100vh;
+      font-size: 0.875rem;
+}
+  /* 노말라이즈 */
+body,
+ul,
+li,
+h1 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+label[for] {
+    cursor: pointer;
+    user-select: none;
+}
+  /* 라이브러리 */
+.border-red {
+    border: 4px solid red;
+}
+
+.border-pink {
+    border: 4px solid pink;
+}
+
+.border-blue {
+    border: 4px solid blue;
+}
+.border-green {
+    border: 4px solid green;
+}
+
+.border-black {
+    border: 4px solid black;
+}
+.border-gold {
+    border: 4px solid gold;
+}
+.flex {
+    display: flex;
+  }
+  
+  .flex-jc-e {
+    justify-content: flex-end;
+  }
+  
+  .flex-jc-s {
+    justify-content: flex-start;
+  }
+  
+  .flex-jc-c {
+    justify-content: center;
+  }
+  
+  .flex-jc-sb {
+    justify-content: space-between;
+  }
+  
+  .flex-ai-c {
+    align-items: center;
+  }
+  
+  .flex-as-c {
+    align-self: center;
+  }
+  
+  .flex-grow-1 {
+    flex-grow: 1;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .height-100p {
+    height: 100%;
+  }
+  
+  .block {
+    display: block;
+  }
+  
+  .con {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .img-box > img {
+    width: 100%;
+    display: block;
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  .txt-al-c {
+    text-align: center;
+  }
+  
+  /* cos lib */
+  .ico {
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-image: url(https://www.kakaobank.com/static/images/web/img_kabang_220615.png);
+  }
+  
+  .ico-1 {
+    background-position: -341px -292px;
+  }
+  
+  .ico-2 {
+    background-position: -371px -292px;
+  }
+  
+  /* 커스텀 */
+  ::selection {
+    background-color: #fede22;
+  }
+  
+  .con {
+    width: 1080px;
+  }
+  
+  .con-min-width {
+    min-width: 1080px;
+  }
+  
+  .strong {
+    font-weight: bold;
+  }
+  
+  .black {
+    color: black;
+  }
+  
+  /* 탑바 시작 */
+  body {
+    margin-top: 60px;
+  }
+  
+  .top-bar {
+    height: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+  }
+  
+  /* 탑바 - 메뉴박스 1 */
+  .top-bar .menu-box-1 > ul > li > a {
+    padding: 0 20px;
+    position: relative;
+    color:gray;
+  }
+
+  /* .top-bar .menu-box-1 > ul > li> a. {
+    padding: 0 20px;
+    position: relative;
+    color:rgb(38, 105, 214);
+  } */
+  
+  .top-bar .menu-box-1 ul > li > a:hover {
+    background-color: aliceblue;
+    color:black;
+  }
+  
+  .top-bar .menu-box-1 > ul > li > a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    border-top: 2px solid black;
+    bottom: -1px;
+    left: 0;
+    transition: width 0.3s;
+  }
+  
+  .top-bar .menu-box-1 > ul > li:hover > a::after {
+    width: 100%;
+  }
+  
+  /* 탑바 - 메뉴박스 1 - 2차 메뉴 */
+  .top-bar .menu-box-1 > ul > li > div {
+    width: 100%;
+    background-color: white;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 1px);
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+  
+  .top-bar .menu-box-1 > ul > li:hover > div {
+    display: block;
+  }
+  
+  .top-bar .menu-box-1 > ul > li > div > div > ul > li {
+    width: 20%;
+  }
+  
+  .top-bar .menu-box-1 > ul > li:first-child > div > div > ul > li {
+    width: 25%;
+  }
+  
+  .top-bar .menu-box-1 > ul > li > div > div > ul > li > a {
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  /* 탑바 - 메뉴박스 1 - 3차 메뉴 */
+  .top-bar .menu-box-1 > ul > li > div > div > ul > li > ul > li > a {
+    text-align: center;
+    padding: 10px 0;
+    color: #444;
+    font-size: 13px;
+}
+
+  /* 탑바 - 서류제출버튼 */
+.top-bar .btn-go-submit {
+    background-color: #fede22;
+    padding: 13px 20px;
+    border-radius: 30px;
+}
+
+  /* 탑바 - 언어변경 버튼 */
+.top-bar .global-logo {
+    padding: 0 20px;
+    cursor: default;
+}
+
+.top-bar .global-logo:hover > img {
+    opacity: 0.3;
+}
+  /* 탑바 끝 */
+
+/*바디 시작*/
+.mainbody{
+    padding-left: 15%;
+    padding-right: 15%; 
+    padding-top: 50px;
+}
+
+.mainimg{
+    display: flex;
+    margin-right: 10%;
+}
+.background1{
+    background-image: url("https://miniintern.com/static/images/main/main_img_1_M.webp");
+    background-size: cover;
+    width: 800px;
+    height: 400px;
+    color:white;
+    border-radius: 2%;
+}
+
+.backfont{
+    margin : 30px;
+    
+}
+.empty{
+    width:25px ;
+    height: 400px;
+}
+
+.background2{
+    background-image: url("https://miniintern.com/static/images/main/main_img_r_1.webp");
+    background-size: cover;
+    width: 380px;
+    height: 400px;
+    color:white;
+    border-radius: 2%;
+}
+
+.fontend{
+    display: flex;
+    align-items: flex-end;
+}
+.middle{
+    padding-top: 20px;
+}
+.middleicon{
+    display: flex;
+    align-items: center;
+}
+.middlefont{
+    display: flex;
+}
+.middlefont> a{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cardnews{
+    display: flex;
+    flex-flow:  row wrap;
+}
+
+.card{
+    margin-right:16px;
+    margin-bottom: 15px;
+}
+
+.contentjob {
+    display: flex;
+    position: relative;
+    margin-top: 60px;
+    padding-top: 20px;
+}
+.contentjob::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 230px;
+    left: -9999px;
+    right: -9999px;
+    z-index: -1;
+    background: rgb(240, 243, 243);
+}
+.contentjob .banner-img-box {
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 335px;
+    height: 251px;
+    border-radius: 15px;
+}
+.contentjob .banner-img-box .img-container {
+    position: relative;
+    width: 335px;
+    height: auto;
+}
+.contentjob .banner-img-box .img-container img {
+    width: 100%;
+}
+.contentjob .banner-info-box {
+    position: relative;
+    width: 100%;
+    padding: 66px 0px 30px 30px;
+}
+.contentjob .banner-info-box span {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    padding: 8px 22px 9px 30px;
+    border-radius: 0px 17px 17px 0px;
+    background: rgb(23, 161, 255);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 17px;
+    color: rgb(255, 255, 255);
+}
+.contentjob .banner-info-box .happyfolio-banner-info-title {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(147, 153, 153);
+    word-break: keep-all;
+}
+.contentjob .banner-info-box .happyfolio-banner-info-text {
+    margin-top: 4px;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 31px;
+    word-break: keep-all;
+    color: rgb(26, 27, 28);
+}
+
+.job-ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 936px;
+    margin-bottom: 24px;
+}
+.job-ul  li {
+    width: 100%;
+    box-shadow: rgba(26, 27, 28, 0.12) 0px 4px 8px 0px;
+    opacity: 1;
+    transition: transform 0.4s ease 0s, box-shadow 0.4s ease 0s;
+    border-radius: 5px;
+    cursor: pointer;
+    list-style: none;
+}
+.job-ul  li .item-list {
+    display: flex;
+    padding: 12px;
+    width: 100%;
+    position: relative;
+}
+.job-ul li .item-list button {
+    border: none;
+    padding: 0px;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.job-ul li .item-list .img-box {
+    width: 120px;
+    height: 120px;
+    margin-right: 12px;
+    position: relative;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+.job-ul  li .item-list .img-box span {
+    display: block;
+    overflow: hidden;
+    width: initial;
+    height: initial;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    position: absolute;
+    inset: 0px;
+}
+.job-ul  li .item-list .img-box span img {
+    border-radius: 5px;
+    position: absolute;
+    inset: 0px;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 0px;
+    height: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+.job-ul li .item-list .info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.job-ul  li .item-list .info-box .recruitment-card-info-categories {
+    font-size: 12px;
+    color: rgb(147, 153, 153);
+    margin-bottom: 2px;
+}
+.job-ul  li .item-list .info-box .recruitment-card-info-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.job-ul li .item-list .info-box .recruitment-card-info-company-name {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 13px;
+}
+.job-ul li .item-list .info-box .recruitment-info-emplyment-box {
+    display: flex;
+}
+.job-ul li .item-list .info-box .recruitment-info-emplyment-box .recruitment-info-emplyment-type {
+    border-radius: 5px;
+    background-color: #f1f9ff;
+    color: #17a1ff;
+    padding: 0px 4px;
+    margin-right: 4px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+.job-banner {
+    position: relative;
+    margin: 60px 0;
+}
+.job-banner .banner-text-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 45px 60px;
+    z-index: 1;
+  }
+.job-banner.banner-text-area p {
+    width: 100%;
+    flex-shrink: 1;
+    font-size: 21px;
+    word-break: keep-all;
+    color: #fff;
+}
+.job-banner .banner-text-area p strong {
+    display: inline-block;
+    font-weight: 700;
+    font-size: inherit;
+    color: inherit;
+  }
+.job-banner .banner-text-area a {
+    display: block;
+    flex-shrink: 0;
+    width: 148px;
+    padding: 12px 0 13px 0;
+    border-radius: 23px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    background: rgba(255, 255, 255, 0.25);
+    text-align: center;
+    color: #fff;
+}
+.job-banner .banner-img-box {
+    height: 120px;
+    border-radius: 5px;
+    overflow: hidden;
+    isolation: isolate;
+}
+.job-banner.banner-img-box img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: fill;
+       object-fit: fill;
+    -o-object-position: center center;
+       object-position: center center;
+    transition: transform 1s ease 0s;
+  }
+.job-ul2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 936px;
+    margin-bottom: 24px;
+  }
+.job-ul2 li {
+    width: 100%;
+    box-shadow: rgba(26, 27, 28, 0.12) 0px 4px 8px 0px;
+    opacity: 1;
+    transition: transform 0.4s ease 0s, box-shadow 0.4s ease 0s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.job-ul2 li .item-list {
+    width: 216px;
+    border-radius: 5px;
+  }
+.job-ul2 li .item-list .img-box {
+    width: 100%;
+    position: relative;
+    padding-top: 75%;
+  }
+.job-ul2 li .item-list .img-box img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 3.5px 3.5px 0px 0px;
+  }
+.job-ul2 li .item-list .payment-type {
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: rgb(56, 64, 64);
+    color: #fff;
+  }
+.job-ul2 li .item-list .info-box {
+    padding: 12px 12px 16px 12px;
+  }
+.job-ul2 li .item-list .info-box .event-card-info-category {
+    color: rgb(147, 153, 153);
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+.job-ul2 li .item-list .info-box .event-card-info-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    height: 42px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+.job-ul2 li .item-list .info-box .event-card-info-location {
+    color: rgb(103, 106, 106);
+    font-size: 12px;
+    margin-bottom: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+.job-ul2 li .item-list .info-box .event-card-info-number-of-recruiters {
+    color: rgb(245, 101, 5);
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+.job-ul2 li .item-list .info-box .event-card-info-stage-box {
+    display: flex;
+    justify-content: space-between;
+  }
+.job-ul2 li .item-list .info-box .event-card-info-stage-box .event-card-info-stage {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(254, 136, 60);
+  }
+.job-ul2 li .item-list .info-box .event-card-info-stage-box .event-card-info-remaining-days {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(147, 153, 153);
+  }
+
+
+.last {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 936px;
+    margin-bottom: 24px;
+  }
+.last li {
+    width: 100%;
+    box-shadow: rgba(26, 27, 28, 0.12) 0px 4px 8px 0px;
+    opacity: 1;
+    transition: transform 0.4s ease 0s, box-shadow 0.4s ease 0s;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ .last li .item-list {
+    width: 216px;
+    border-radius: 5px;
+  }
+ .last li .item-list .img-box {
+    width: 100%;
+    position: relative;
+    padding-top: 75%;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+.last li .item-list .img-box span {
+    display: block;
+    overflow: hidden;
+    width: initial;
+    height: initial;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    position: absolute;
+    inset: 0px;
+  }
+ .last li .item-list .img-box span img {
+    position: absolute;
+    inset: 0px;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 0px;
+    height: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
+ .last li .item-list .img-box button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+ .last li .item-list .img-box button svg {
+    transition: all 0.3s ease 0s;
+  }
+ .last li .item-list .img-box button:hover > svg path:last-child {
+    stroke: #ff0322;
+    fill: rgb(255, 3, 34);
+  }
+.last li .item-list .info-box {
+    padding: 12px 12px 17px 12px;
+  }
+ .last li .item-list .info-box .happyfolio-card-info-categories {
+    margin-bottom: 5px;
+    display: flex;
+  }
+.last li .item-list .info-box .happyfolio-card-info-categories .happyfolio-card-info-category {
+    color: rgb(147, 153, 153);
+    background-color: rgb(240, 243, 243);
+    font-size: 12px;
+    padding: 2px 4px;
+    border-radius: 5px;
+  }
+ .last li .item-list .info-box .happyfolio-card-info-title {
+    font-size: 14px;
+    font-weight: bold;
+    height: 42px;
+    margin-bottom: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+ .last li .item-list .info-box .happyfolio-card-info-host-and-price-box .happyfolio-card-info-host {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+.last li .item-list .info-box .happyfolio-card-info-host-and-price-box .happyfolio-card-info-host .happyfolio-card-info-host-image-box {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-right: 4px;
+  }
+ .last li .item-list .info-box .happyfolio-card-info-host-and-price-box .happyfolio-card-info-host .happyfolio-card-info-host-image-box span {
+    display: block;
+    overflow: hidden;
+    width: initial;
+    height: initial;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    position: absolute;
+    inset: 0px;
+  }
+.last li .item-list .info-box .happyfolio-card-info-host-and-price-box .happyfolio-card-info-host .happyfolio-card-info-host-image-box span img {
+    border-radius: 50%;
+    position: absolute;
+    inset: 0px;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 0px;
+    height: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+ .last li .item-list .info-box .happyfolio-card-info-host-and-price-box .happyfolio-card-info-host .happyfolio-card-info-host-name {
+    font-size: 12px;
+    color: rgb(147, 153, 153);
+  }
+.last li .item-list .info-box .happyfolio-card-info-host-and-price-box .happyfolio-card-info-price {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+/*푸터 시작*/
+#footer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 27px 0px 37px;
+    border-top: 1px solid rgb(229, 234, 234);
+    background-color: rgb(255, 255, 255);
+}
+#footer .footer-container {
+    width: 930px;
+    margin: 0px auto;
+}
+#footer .footer-container .row1 {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(210, 215, 215);
+}
+#footer .footer-container .row1 .site-info .site-menu-info {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+#footer .footer-container .row1 .site-info .site-menu-info .menu-logo {
+    display: flex;
+    justify-content: space-between;
+}
+#footer .footer-container .row1 .site-info .site-menu-info .menu-logo a {
+    color: rgb(23, 161, 255);
+}
+#footer .footer-container .row1 .site-info .site-menu-info .menu ul {
+    display: flex;
+    width: 100%;
+}
+#footer .footer-container .row1 .site-info .site-menu-info .menu ul li a {
+    display: inline-block;
+    color: rgb(26, 27, 28);
+    transition: all 0.3s ease 0s;
+    font-size: 14px;
+    margin-left: 40px;
+}
+#footer .footer-container .row1 .site-info .site-menu-info .menu ul li a:hover {
+    color: #17a1ff;
+}
+#footer .footer-container .row1 .site-info .site-cs-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0px 0px;
+    position: relative;
+    z-index: 1;
+}
+#footer .footer-container .row1 .site-info .site-cs-info .cs-info-list {
+    position: relative;
+}
+#footer .footer-container .row1 .site-info .site-cs-info .cs-info-list li {
+    display: flex;
+    margin: 10px 0px 0px;
+}
+#footer .footer-container .row1 .site-info .site-cs-info .cs-info-list li .service-title {
+    min-width: 82px;
+    font-weight: 700;
+    font-size: 14px;
+}
+#footer .footer-container .row1 .site-info .site-cs-info .cs-info-list li .service-detail-info {
+    font-size: 12px;
+    line-height: 21px;
+    color: rgb(56, 64, 64);
+}
+#footer .footer-container .row1 .site-info .site-cs-info .cs-info-list li .service-detail-info a {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 21px;
+    color: rgb(56, 64, 64);
+}
+#footer .footer-container .row1 .site-info .site-cs-info .cs-info-list li .service-detail-info a.page-link {
+    margin: 0px 0px 0px 4px;
+    font-weight: 700;
+}
+#footer .footer-container .row1 .site-info .site-cs-info .cs-info-list li .service-detail-info a:hover {
+    color: #17a1ff;
+}
+#footer .footer-container .row1 .site-info .site-cs-info .cs-info-list li .service-detail-info b {
+    display: inline-block;
+    font-weight: 400;
+}
+#footer .footer-container .row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 3;
+}
+#footer .footer-container .row2 .company-info p {
+    font-size: 12px;
+    line-height: 18px;
+    color: rgb(171, 177, 177);
+    word-break: keep-all;
+}
+#footer .footer-container .row2 a {
+    flex-shrink: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(171, 177, 177);
+}
+
