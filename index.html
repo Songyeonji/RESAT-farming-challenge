@@ -69,6 +69,8 @@
       const itemWidth = carouselContainer.clientWidth;
 
       let currentIndex = 0;
+      let timerId;
+
 
       function goToSlide(index) {
         if (index < 0 || index >= totalItems) {
@@ -96,16 +98,30 @@
 
         goToSlide(currentIndex);
       }
+      function startSlideShow() {
+        timerId = setInterval(nextSlide, 2000);
+      }
+
+      function stopSlideShow() {
+        clearInterval(timerId);
+      }
+
 
       carouselArrows.forEach(function(arrow) {
         arrow.addEventListener("click", function() {
+          stopSlideShow();
+
           if (this.classList.contains("prev")) {
             prevSlide();
           } else if (this.classList.contains("next")) {
             nextSlide();
           }
+
+          startSlideShow();
         });
       });
+
+      startSlideShow();
     });
   </script>
 </body>
