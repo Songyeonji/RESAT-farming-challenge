@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Carousel</title>
+  <style>
+    .carousel-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .carousel-item {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .carousel-arrow.prev {
+      left: 10px;
+    }
+
+    .carousel-arrow.next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="https://plus.unsplash.com/premium_photo-1677637711897-6e2efe6697ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Image 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://media.istockphoto.com/id/1347540778/ko/%EC%82%AC%EC%A7%84/%EB%8B%A4%EB%A5%B8-%ED%81%AC%EA%B8%B0%EC%99%80-%EC%83%89%EC%83%81%EC%9D%98-%EC%9E%8E%ED%81%B4%EB%A1%9C%EC%A6%88%EC%97%85.jpg?s=1024x1024&w=is&k=20&c=Oy1Bh7TZyk9LZcie2CUraoUlsU8tqCVJD4ugJ6kcxxQ=" alt="Image 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1681168702601-d1fccdb25ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Image 3">
+      </div>
+    </div>
+    <div class="carousel-arrow prev">&lt;</div>
+    <div class="carousel-arrow next">&gt;</div>
+  </div>
+
+  <script>
+     window.addEventListener("DOMContentLoaded", function() {
+      const carouselContainer = document.querySelector(".carousel-container");
+      const carousel = document.querySelector(".carousel");
+      const carouselItems = document.querySelectorAll(".carousel-item");
+      const carouselArrows = document.querySelectorAll(".carousel-arrow");
+      const totalItems = carouselItems.length;
+      const itemWidth = carouselContainer.clientWidth;
+
+      let currentIndex = 0;
+      let timerId;
+
+
+      function goToSlide(index) {
+        if (index < 0 || index >= totalItems) {
+          return;
+        }
+
+        carousel.style.transform = `translateX(-${index * itemWidth}px)`;
+        currentIndex = index;
+      }
+
+      function nextSlide() {
+        currentIndex++;
+        if (currentIndex >= totalItems) {
+          currentIndex = 0;
+        }
+
+        goToSlide(currentIndex);
+      }
+
+      function prevSlide() {
+        currentIndex--;
+        if (currentIndex < 0) {
+          currentIndex = totalItems - 1;
+        }
+
+        goToSlide(currentIndex);
+      }
+      function startSlideShow() {
+        timerId = setInterval(nextSlide, 2000);
+      }
+
+      function stopSlideShow() {
+        clearInterval(timerId);
+      }
+
+
+      carouselArrows.forEach(function(arrow) {
+        arrow.addEventListener("click", function() {
+          stopSlideShow();
+
+          if (this.classList.contains("prev")) {
+            prevSlide();
+          } else if (this.classList.contains("next")) {
+            nextSlide();
+          }
+
+          startSlideShow();
+        });
+      });
+
+      startSlideShow();
+    });
+  </script>
+</body>
+</html>

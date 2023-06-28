@@ -1,66 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-  <title>Image Carousel</title>
-  <style>
-    .carousel-container {
-      overflow: hidden;
-      position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 구글 폰트 불러오기 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 
-    .carousel {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      height: 100%;
-    }
+    <!-- 폰트어썸 불러오기 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 
-    .carousel-item {
-      flex: 0 0 100%;
-      width: 100%;
-    }
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
+    <!-- 슬릭 슬라이더 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 
-    .carousel-arrow.prev {
-      left: 10px;
-    }
-
-    .carousel-arrow.next {
-      right: 10px;
-    }
-  </style>
+    <title>미니인턴 | 2주 만에 실무 경험을 쌓고 취업하는 미니 인턴</title>
+    
 </head>
 <body>
-  <div class="carousel-container">
-    <div class="carousel">
-      <div class="carousel-item">
-        <img src="https://plus.unsplash.com/premium_photo-1677637711897-6e2efe6697ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Image 1">
+
+  <div class="contentjob">
+    <div class="banner-img-box">
+      <div class = "carousel-container">
+      <div class = "carousel">
+      <div class="img-container">
+        <div class="carousel-item">
+        <img src="https://miniintern-upload.s3.ap-northeast-2.amazonaws.com/35427/43aa25a9-5574-4874-94f5-4c2bfdc3345e/%EB%B6%99%EC%9E%844-%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.png" alt="Image 1">
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="https://media.istockphoto.com/id/1347540778/ko/%EC%82%AC%EC%A7%84/%EB%8B%A4%EB%A5%B8-%ED%81%AC%EA%B8%B0%EC%99%80-%EC%83%89%EC%83%81%EC%9D%98-%EC%9E%8E%ED%81%B4%EB%A1%9C%EC%A6%88%EC%97%85.jpg?s=1024x1024&w=is&k=20&c=Oy1Bh7TZyk9LZcie2CUraoUlsU8tqCVJD4ugJ6kcxxQ=" alt="Image 2">
+
+      <div class="img-container">
+        <div class="carousel-item">
+          <img src="https://miniintern-upload.s3.ap-northeast-2.amazonaws.com/35108/4e4efa39-896d-4fa6-9dee-d5f243fe7b96/%EB%B6%99%EC%9E%844-%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.png" alt="Image 2">
+        </div>
+        </div>
+
+      <div class="img-container">
+        <div class="carousel-item">
+        <img src="https://miniintern-upload.s3.ap-northeast-2.amazonaws.com/35405/2480abbf-dfaf-4105-bdb9-4a9b62f2a051/%EC%95%8C%EC%9E%98%EB%94%B1%EA%B9%94%EC%84%BC-%EC%B7%A8%EC%97%85%EC%A4%80%EB%B9%84-%EC%8B%A0%EC%9E%85%EC%82%AC%EC%9B%90-%EB%85%B8%ED%95%98%EC%9A%B0-%EA%B3%B5%EC%9C%A0-cover.jpg" alt="Image 3">
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="https://images.unsplash.com/photo-1681168702601-d1fccdb25ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Image 3">
+
+      <div class="img-container">
+        <div class="carousel-item">
+        <img src="https://miniintern-upload.s3.ap-northeast-2.amazonaws.com/35132/fcb703d1-6104-4175-be4c-8982bed44e71/%EC%A7%80%EB%B0%A9%EB%8C%80-%EB%AC%B8%EA%B3%BC%EC%83%9D%EC%9D%B4-IT-%EC%B7%A8%EC%97%85%EC%97%90-%EC%9D%B4%EC%A7%81%EA%B9%8C%EC%A7%80-%EC%84%B1%EA%B3%B5%ED%96%88%EB%8B%A4%EA%B3%A0-cover.jpg" alt="Image 4">
+        </div>
       </div>
     </div>
-    <div class="carousel-arrow prev">&lt;</div>
-    <div class="carousel-arrow next">&gt;</div>
+      <div class="carousel-arrow prev">&lt;</div>
+      <div class="carousel-arrow next">&gt;</div>
+    </div>
   </div>
+    <div class="banner-info-box">
+      <span>서비스런칭</span>
+      <p class="happyfolio-banner-info-title">해피폴리오로 취업 정보를 받으세요</p>
+      <p class="happyfolio-banner-info-text">
+        검증된 현직자의 취업 스토리로 
+        <br> 
+        취준 전략을 세우세요
+      </p>
+    </div>
+</div>
+</div>
 
-  <script>
-    window.addEventListener("DOMContentLoaded", function() {
+<script>
+   window.addEventListener("DOMContentLoaded", function() {
       const carouselContainer = document.querySelector(".carousel-container");
       const carousel = document.querySelector(".carousel");
       const carouselItems = document.querySelectorAll(".carousel-item");
@@ -124,5 +133,6 @@
       startSlideShow();
     });
   </script>
+
 </body>
 </html>
